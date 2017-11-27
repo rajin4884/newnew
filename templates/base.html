@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+<title>{% block title %}Django Web Programming{% endblock %}</title>
+
+{% load staticfiles %}
+<link rel="stylesheet" type="text/css" href="{% block stylesheet %}{% static "css/base1.css" %}{% endblock %}" />
+<link rel="stylesheet" type="text/css" href="{% block extrastyle %}{% endblock %}" />
+
+</head>
+
+<body>
+
+<div id="header">
+    <h2 class="maintitle">1조 블로그</h2>
+    {% if user.is_active %}
+    <h4 class="welcome">환영합니다.
+                <strong>{% firstof user.get_short_name user.get_username %}</strong> /
+                <a href="{% url 'password_change' %}">비밀번호 변경</a> /
+                <a href="{% url 'logout' %}">로그아웃</a>
+    </h4>
+    {% else %}
+    <h4 class="welcome">어서오세요, 여러분 /
+                <a href="{% url 'login' %}">로그인</a> /
+                <a href="{% url 'register' %}">가입</a>
+    </h4>
+    {% endif %}
+</div>
+
+<div id="menu">
+    <li><a href="{% url 'home' %}">홈</a></li>
+    <li><a href="{% url 'bookmark:index' %}">북마크</a></li>
+    <li><a href="{% url 'blog:index' %}">블로그</a></li>
+    <li><a href="{% url 'photo:index' %}">사진</a></li>
+
+    <li>추가&bigtriangledown;
+        <ul>
+            <li><a href="{% url 'bookmark:add' %}">북마크</a></li>
+            <li><a href="{% url 'blog:add' %}">포스트</a></li>
+            <li><a href="{% url 'photo:album_add' %}">앨범</a></li>
+            <li><a href="{% url 'photo:photo_add' %}">사진</a></li>
+        </ul>
+    </li>
+    <li>변경&bigtriangledown;
+        <ul>
+            <li><a href="{% url 'bookmark:change' %}">북마크</a></li>
+            <li><a href="{% url 'blog:change' %}">포스트</a></li>
+            <li><a href="{% url 'photo:album_change' %}">앨범</a></li>
+            <li><a href="{% url 'photo:photo_change' %}">포토</a></li>
+        </ul>
+    </li>
+
+    <li><a href="{% url 'blog:post_archive' %}">Archive</a></li>
+    <li><a href="{% url 'blog:search' %}">검색</a></li>
+    <li><a href="{% url 'admin:index' %}">관리자</a></li>
+    <li><a href="{% url 'polls:index' %}">설문</a></li>
+</div>
+
+{% block content %}{% endblock %}
+
+{% block footer %}{% endblock %}
+
+</body>
+</html>
