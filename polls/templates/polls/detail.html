@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% block title %}polls_list.html{% endblock %}
+{% block title %}1조 블로그{% endblock %}
 {% load staticfiles %}
 {% block content %}
 <div id="content">
@@ -13,7 +13,7 @@
     <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}" />
     <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br />
 {% endfor %}
-<input type="submit" value="Vote" />
+<input type="submit" value="투표하기" style="background: pink" />
 </form>
 </div>
 {% endblock %}

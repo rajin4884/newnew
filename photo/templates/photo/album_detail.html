@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}album_detail.html{% endblock %}
+{% block title %}1조 블로그{% endblock %}
 
 {% load staticfiles %}
 {% block extrastyle %}{% static "photo/photo.css" %}{% endblock %}
@@ -8,8 +8,12 @@
 {% block content %}
 <div id="content">
 
-    <h2 style="display:inline">{{ object.name }}</h2>
+    <h2 style="display:inline-block">{{ object.name }}</h2>
     &emsp;<b><i>{{ object.description }}</i></b>
+
+<div class="button">
+  <a href="{% url 'photo:index' %}" class="btn btn-primary" role="button">앨범 목록</a>
+</div>
 
     <hr/>
 

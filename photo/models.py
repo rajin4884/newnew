@@ -18,10 +18,10 @@ class Album(models.Model):
 
     class Meta:
         ordering = ['name']
-        
+
     def __str__(self):
         return self.name
-        
+
     def get_absolute_url(self):
         return reverse('photo:album_detail', args=(self.id,))
 
@@ -33,13 +33,12 @@ class Photo(models.Model):
     description = models.TextField('Photo Description', blank=True)
     upload_date = models.DateTimeField('Upload Date', auto_now_add=True)
     owner = models.ForeignKey(User, null=True)
-        
+
     class Meta:
         ordering = ['title']
-        
+
     def __str__(self):
         return self.title
 
     def get_absolute_url(self):
         return reverse('photo:photo_detail', args=(self.id,))
-

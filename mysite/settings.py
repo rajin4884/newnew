@@ -25,12 +25,13 @@ SECRET_KEY = 'mv24_xyu5*=nv+l$*sqn_ilnx3q93*#o-o^3&3an-r*-4%yfxi'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['.pythonanywhere.com', '.127.0.0.1']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -44,7 +45,6 @@ INSTALLED_APPS = [
     'disqus',
     'django.contrib.sites',
     'photo.apps.PhotoConfig',
-    'polls',
 ]
 
 DISQUS_WEBSITE_SHORTNAME = 'pythonwebprogramming'
@@ -116,8 +116,8 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
-#LANGUAGE_CODE = 'ko-kr'
-
+# LANGUAGE_CODE = 'ko-kr'
+#
 #TIME_ZONE = 'UTC'
 TIME_ZONE = 'Asia/Seoul'
 

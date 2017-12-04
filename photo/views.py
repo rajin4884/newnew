@@ -107,4 +107,3 @@ class AlbumPhotoUV(LoginRequiredMixin, UpdateView):
             return redirect(self.object.get_absolute_url())
         else:
             return self.render_to_response(self.get_context_data(form=form))
-

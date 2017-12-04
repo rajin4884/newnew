@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 
-{% block title %}album_confirm_delete.html{% endblock %}
+{% block title %}1조 블로그{% endblock %}
 
 {% block content %}
 <div id="content">
@@ -9,7 +9,7 @@
 
     <form action="." method="post"> {% csrf_token %}
         <p>"{{ object }}"를 정말로 삭제하시겠습니까?</p>
-        <input type="submit" value="승인" />
+        <button type="submit" class="btn btn-default">앨범삭제</button>
     </form>
 
 </div>
