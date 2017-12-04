@@ -32,7 +32,7 @@
 	            <a href="?page={{ page_obj.previous_page_number }}">이전 페이지</a>
 	        {% endif %}
 
-	        페이지 {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
+	        {{ page_obj.number }} / {{ page_obj.paginator.num_pages }}
 
 	        {% if page_obj.has_next %}
 	            <a href="?page={{ page_obj.next_page_number }}">다음 페이지</a>
